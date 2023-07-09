@@ -1,11 +1,9 @@
-use std::io;//io - i= input o=output, bu veri alma ve cikti verme icin kullanilan bir kutuphanedir
+mod strctPerson;
 
-struct Person {
-    name: String,
-    surname: String,
-    age: i8,
-    balance: f64,
-}
+use std::io;//io - i= input o=output, bu veri alma ve cikti verme icin kullanilan bir kutuphanedir
+use crate::strctPerson::Person;
+
+
 
 fn main() {
     let person1 = Person {
@@ -14,6 +12,9 @@ fn main() {
         age: 24,
         balance: 900.54,
     };
+    println!("{}",person1.name);
+    println!("{person1:#?}");
+
     /*let (eksi,arti,carpi) = math(5,3    );
     println!("{eksi},{arti},{carpi}");*/
 }
