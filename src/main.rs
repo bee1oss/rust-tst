@@ -1,24 +1,36 @@
 mod strctPerson;
 
-use std::io;//io - i= input o=output, bu veri alma ve cikti verme icin kullanilan bir kutuphanedir
+use std::io;
+//io - i= input o=output, bu veri alma ve cikti verme icin kullanilan bir kutuphanedir
 use crate::strctPerson::Person;
 
-
+#[derive(Debug)]
+struct Str(i32,String,f64);//tuples
 
 fn main() {
+    /*let (eksi,arti,carpi) = math(5,3    );
+    println!("{eksi},{arti},{carpi}");*/
+    personstrct();
+}
+
+fn personstrct() {
+    let age: i8 = 24;
+    let balance: f64 = 900.54;
     let person1 = Person {
         name: "Bega".to_string(),
         surname: "Haciyew".to_string(),
-        age: 24,
-        balance: 900.54,
+        age,
+        balance,
     };
-    println!("{}",person1.name);
-    println!("{person1:#?}");
-
-    /*let (eksi,arti,carpi) = math(5,3    );
-    println!("{eksi},{arti},{carpi}");*/
+    let person2 = Person {
+        name: "Begench".to_string(),
+        surname: "Hacc".to_string(),
+        ..person1
+    };
+    //tuples
+    let object = Str(5,"Txt".to_string(),4512.21);
+    println!("{object:#?}");
 }
-
 
 fn insturtion() {
     let mult = mul(4, 4);
