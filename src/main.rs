@@ -7,10 +7,15 @@ use crate::strctPerson::Person;
 #[derive(Debug)]
 struct Str(i32,String,f64);//tuples
 
+struct Triangle{
+    cat1:f64,
+    cat2:f64
+}
+
 fn main() {
     /*let (eksi,arti,carpi) = math(5,3    );
     println!("{eksi},{arti},{carpi}");*/
-    personstrct();
+
 }
 
 fn personstrct() {
