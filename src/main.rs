@@ -1,22 +1,33 @@
 mod strctPerson;
 
-use std::io;
+use std::{io, thread, time};
+use std::io::Write;
+use std::time::{Duration, Instant};
 //io - i= input o=output, bu veri alma ve cikti verme icin kullanilan bir kutuphanedir
 use crate::strctPerson::Person;
 
 #[derive(Debug)]
-struct Str(i32,String,f64);//tuples
+struct Str(i32, String, f64);//tuples
 
-struct Triangle{
-    cat1:f64,
-    cat2:f64
+struct Triangle {
+    cat1: f64,
+    cat2: f64,
 }
 
 fn main() {
     /*let (eksi,arti,carpi) = math(5,3    );
     println!("{eksi},{arti},{carpi}");*/
-
+    hello();
 }
+
+fn hello() {
+    let colors = ["\x1b[31m", "\x1b[32m", "\x1b[33m", "\x1b[34m", "\x1b[35m", "\x1b[36m"];
+        for color in &colors {
+            print!("{}Hello, World!{}", color, "\x1b[0m");
+            print!("\x1b[1A"); // Move cursor up one line
+    }
+}
+
 
 fn personstrct() {
     let age: i8 = 24;
@@ -33,7 +44,7 @@ fn personstrct() {
         ..person1
     };
     //tuples
-    let object = Str(5,"Txt".to_string(),4512.21);
+    let object = Str(5, "Txt".to_string(), 4512.21);
     println!("{object:#?}");
 }
 
